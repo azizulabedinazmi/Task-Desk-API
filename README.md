@@ -4,6 +4,10 @@
 
 Task Desk is a small task-management application with a focused browser UI and a JSON API. Add tasks, search them, filter by state, mark them complete, and remove them. It uses the same request handler locally and on Vercel.
 
+## License
+
+This project is licensed under the [MIT License](LICENSE). Copyright (c) 2026 Azizul Abedin.
+
 ## What is included
 
 - A responsive task dashboard at `/`
@@ -236,10 +240,12 @@ Invoke-RestMethod -Uri http://127.0.0.1:3000/api/tasks
 
 ```text
 api/index.js       Vercel function entry point
+index.js            Vercel root adapter for the UI and API
 public/index.html  Dashboard markup
 public/app.js      UI state and API calls
 public/styles.css  Responsive visual design
-server.js          Shared API handler and local static server
+local.js           Local HTTP server and static asset server
+api/handler.js     Shared serverless API handler
 vercel.json        Vercel function configuration
 ```
 

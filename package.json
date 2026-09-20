@@ -2,11 +2,14 @@
   "name": "task-api-documentation-example",
   "version": "1.0.0",
   "private": true,
+  "main": "api/index.js",
+  "license": "MIT",
+  "author": "Azizul Abedin",
   "description": "A small documented HTTP API for the DevConnect backend documentation exercise.",
   "type": "module",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "start": "node local.js",
+    "dev": "node local.js"
   },
   "engines": {
     "node": ">=20.11.1"
