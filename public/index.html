@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A focused task desk for capturing work and keeping momentum visible." />
+    <title>Task Desk</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Task Desk home">
+          <span class="brand-mark">TD</span>
+          <span>Task Desk</span>
+        </a>
+        <div class="status" id="service-status"><span class="status-dot"></span>Checking service</div>
+      </header>
+
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Daily command center</p>
+          <h1>Make the next step obvious.</h1>
+          <p class="hero-copy">Capture the work in front of you, keep the list honest, and close the loop.</p>
+        </div>
+        <div class="date-stamp" id="today"></div>
+      </section>
+
+      <section class="metrics" aria-label="Task summary">
+        <div class="metric"><span>Total</span><strong id="total-count">0</strong></div>
+        <div class="metric"><span>Open</span><strong id="open-count">0</strong></div>
+        <div class="metric"><span>Finished</span><strong id="done-count">0</strong></div>
+      </section>
+
+      <section class="workspace">
+        <div class="composer-panel">
+          <div class="section-heading">
+            <div><p class="eyebrow">Add to the queue</p><h2>What needs your attention?</h2></div>
+            <span class="step-number">01</span>
+          </div>
+          <form id="task-form">
+            <label for="task-title">Task title</label>
+            <div class="input-row">
+              <input id="task-title" name="title" maxlength="120" placeholder="e.g. Ship the API README" autocomplete="off" required />
+              <button type="submit" class="primary-button">Add task <span aria-hidden="true">+</span></button>
+            </div>
+            <p class="form-message" id="form-message" role="status"></p>
+          </form>
+        </div>
+
+        <div class="list-panel">
+          <div class="list-toolbar">
+            <div class="section-heading compact"><div><p class="eyebrow">Your workspace</p><h2>Task queue</h2></div></div>
+            <button class="quiet-button" id="refresh-button" type="button" title="Refresh tasks">Refresh <span aria-hidden="true">↻</span></button>
+          </div>
+          <div class="controls">
+            <div class="filters" role="group" aria-label="Filter tasks">
+              <button class="filter-button active" data-filter="all" type="button">All</button>
+              <button class="filter-button" data-filter="active" type="button">Open</button>
+              <button class="filter-button" data-filter="completed" type="button">Finished</button>
+            </div>
+            <label class="search-wrap"><span class="sr-only">Search tasks</span><input id="search-input" type="search" placeholder="Search" /></label>
+          </div>
+          <div id="task-list" class="task-list" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <footer><span>Built for clarity.</span><span>In-memory demo API</span></footer>
+    </main>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
